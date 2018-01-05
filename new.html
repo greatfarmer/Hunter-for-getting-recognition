@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+  <title>인정 신청</title>
+</head>
+<body>
+  <form action="" method="post">
+    <p>인정받고 싶은 분야</p>
+    <select name="category" id="category">
+      <option selected>-- 분야 --</option>
+      <option>일상</option>
+      <option>업무</option>
+      <option>과시</option>
+      <option>기타</option>
+    </select><br>
+    <p>인정받고 싶은 내용</p>
+    <input type="text" name="text"><br>
+    <p>시작일자</p>
+    <input type="date" name="date"><br>
+    <p>완료일자</p>
+    <input type="date" name="date"><br>
+    <p>몇 명에게 인정받을 것인가?</p>
+    <input type="number" name="number" min="1" max="100" step="1"><br><br>
+    <input type="submit" value="제출">
+  </form>
+</body>
+</html>
