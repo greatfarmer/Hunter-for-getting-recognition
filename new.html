@@ -5,9 +5,9 @@
   <title>인정 신청</title>
 </head>
 <body>
-  <form action="" method="post">
+  <form action="new.php" data-ajax="false" method="post">
     <p>인정받고 싶은 분야</p>
-    <select name="category" id="category">
+    <select name="field">
       <option selected>-- 분야 --</option>
       <option>일상</option>
       <option>업무</option>
@@ -15,13 +15,13 @@
       <option>기타</option>
     </select><br>
     <p>인정받고 싶은 내용</p>
-    <input type="text" name="text"><br>
+    <input type="text" name="content"><br>
     <p>시작일자</p>
-    <input type="date" name="date"><br>
+    <input type="date" name="start"><br>
     <p>완료일자</p>
-    <input type="date" name="date"><br>
-    <p>몇 명에게 인정받을 것인가?</p>
-    <input type="number" name="number" min="1" max="100" step="1"><br><br>
+    <input type="date" name="finish"><br>
+    <p>몇 명에게 인정받을 것인가? (최대 100명)</p>
+    <input type="number" name="people" min="1" max="100" step="1"><br><br>
     <input type="submit" value="제출">
   </form>
 </body>

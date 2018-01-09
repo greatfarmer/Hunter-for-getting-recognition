@@ -1,0 +1,9 @@
+분야 field varchar(20),
+
+내용 content varchar(200),
+
+시작일자 start varchar(20),
+
+완료일자 finish varchar(20),
+
+몇명 people int(100),

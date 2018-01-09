@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>List</title>
+  <style type="text/css">
+    table {
+      border: 0;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    table td, table th {
+      border: 1px solid;
+      padding: 2px 5px 2px 5px;
+    }
+    .text-center { text-align: center; }
+    .text-right { text-align: right; }
+  </style>
+</head>
+
+<body>
+  <?php
+    /* Load DB */
+    $conn = mysqli_connect('localhost', 'greatfarmer', 'd27771293', 'greatfarmer');
+    if ( !$conn ) die('DB Error');
+
+    /* Set to UTF-8 Encoding */
+    mysqli_query($conn, 'set session character_set_connection=utf8;');
+    mysqli_query($conn, 'set session character_set_results=utf8;');
+    mysqli_query($conn, 'set session character_set_client=utf8;');
+
+    /* Load data */
+    $query = 'SELECT * FROM register';
+    $result = mysqli_query($conn, $query);
+
+
+    echo '<table class="text-center"><tr>' . '<th>분야</th><th>내용</th><th>시작 일자</th><th>완료 일자</th><th>목표 인원</th>' . '</tr>';
+
+    while ($row = mysqli_fetch_array($result)) {
+      echo '<tr><td>' . $row['field'] . '</td>' . '<td>' . $row['content'] . '</td>' . '<td>' . $row['start'] . '</td>' . '<td>' . $row['finish'] . '</td>' . '<td>' . $row['people'] . '</td></tr>';
+    }
+
+    echo '</table>';
+    mysqli_close($conn);
+  ?>
+</body>
+</html>
