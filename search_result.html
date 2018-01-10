@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>List</title>
+  <title>Search</title>
   <style type="text/css">
     table {
       border: 0;
@@ -17,9 +17,7 @@
     .text-right { text-align: right; }
   </style>
 </head>
-
 <body>
-  <h3>전체목록</h3>
   <?php
     /* Load DB */
     $conn = mysqli_connect('localhost', 'greatfarmer', 'd27771293', 'greatfarmer');
@@ -34,14 +32,16 @@
     $query = 'SELECT * FROM register';
     $result = mysqli_query($conn, $query);
 
-
     echo '<table class="text-center"><tr>' . '<th>작성자</th><th>분야</th><th>내용</th><th>시작 일자</th><th>완료 일자</th><th>목표 인원</th>' . '</tr>';
 
     while ($row = mysqli_fetch_array($result)) {
-      echo '<tr><td>' . $row['writer'] . '</td>' . '<td>' . $row['field'] . '</td>' . '<td>' . $row['content'] . '</td>' . '<td>' . $row['start'] . '</td>' . '<td>' . $row['finish'] . '</td>' . '<td>' . $row['people'] . '</td></tr>';
+      if ($row['writer'] == $_POST['writer']) {
+        echo '<tr><td>' . $row['writer'] . '</td>' . '<td>' . $row['field'] . '</td>' . '<td>' . $row['content'] . '</td>' . '<td>' . $row['start'] . '</td>' . '<td>' . $row['finish'] . '</td>' . '<td>' . $row['people'] . '</td></tr>';
+      }
     }
 
     echo '</table>';
+
     mysqli_close($conn);
   ?>
 </body>

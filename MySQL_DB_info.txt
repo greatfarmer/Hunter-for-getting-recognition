@@ -1,3 +1,7 @@
+순번 i
+
+작성자 name varchar(20),
+
 분야 field varchar(20),
 
 내용 content varchar(200),
@@ -6,4 +10,6 @@
 
 완료일자 finish varchar(20),
 
-몇명 people int(100),
+목표인원 people int(100),
+
+달성인원 achieve int(100),
