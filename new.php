@@ -28,5 +28,5 @@ $result = mysqli_query($connect, $query);
 mysqli_close($connect);
 
 echo('등록이 정상적으로 완료되었습니다.');
-// echo("<meta http-equiv='Refresh' content='2; URL=new.html'>");
+echo("<meta http-equiv='Refresh' content='2; URL=index.html'>");
 ?>

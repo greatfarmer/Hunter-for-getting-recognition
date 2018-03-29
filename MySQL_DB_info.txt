@@ -1,6 +1,6 @@
 순번 i
 
-작성자 name varchar(20),
+작성자 writer varchar(20),
 
 분야 field varchar(20),
 
